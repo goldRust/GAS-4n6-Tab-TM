@@ -1,0 +1,59 @@
+<style>
+*{
+margin:0px;
+
+padding:0px;	
+}
+#header{
+background-color: grey;
+font-variant: small-caps;
+border-bottom: 1px solid black;
+}
+.prices{
+background-color: lightgray;
+margin-left: 10px;
+width: 50px;
+}
+form{
+	padding-top: 10px;
+	padding-left: 30px;
+	background-color: gray;
+
+}
+
+</style><script>
+ function formSubmit() {
+
+            google.script.run.rSweepsMenu(document.forms[0]);
+            Logger.log('Got this far');
+            google.script.host.close();
+            Logger.log('Got this far');
+                 }
+</script>
+
+<form>
+What counts in sweeps?
+<br/><select name="tSweep">
+ <option value="everything">Everything.</option>
+  <option value="aB">A and B only.</option>
+  <option value="tops">Top entries - select number below.</option>
+
+
+
+</select>
+
+<br/>
+If 'top entries', please enter how many to count. <input type='number' name='num'/>
+
+<br/>
+
+<input type="button" value="Run Sweeps"
+    onclick="this.value='Please Wait...';this.disabled=true;formSubmit();close()"/>  
+ 
+<br/><br/> 
+</form>
+
+
+ 
+
+
